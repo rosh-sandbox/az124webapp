@@ -26,13 +26,13 @@ jobs:
 
       - name: dotnet publish
         # run: dotnet publish -c Release -o D:\a\az124webapp\az124webapp
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\az124webapp
+        run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}\az124webapp"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}\az124webapp
+          path: "${{env.DOTNET_ROOT}}\az124webapp"
 
   deploy:
     runs-on: windows-latest
