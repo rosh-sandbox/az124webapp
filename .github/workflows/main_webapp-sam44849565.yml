@@ -24,11 +24,8 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
-      - name: debug
-        run: dotnet workload list
-
       - name: dotnet publish
-        run dotnet publish -c Release -o D:\a\az124webapp\az124webapp
+        run: dotnet publish -c Release -o D:\a\az124webapp\az124webapp
         # run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
